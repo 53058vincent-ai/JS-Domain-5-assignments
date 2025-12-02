@@ -76,7 +76,7 @@
                                 <label for="city">City</label>
                             </td>
                             <td>
-                                <input type="text" name="city" id="city" onchange="convertUpper(this.value, 'city');checkCity(this.value) "/>
+                                <input type="text" name="city" id="city" onchange="checkCity(this.value); "/>
                             </td>
                         </tr>
                         <tr>
@@ -201,8 +201,7 @@
             document.getElementById(field).value = text.toLowerCase();
         }
         function checkCity(city) {
-
-
+            city = city.toUpperCase();
              if (city == 'LAS VEGAS' || city == 'NORTH LAS VEGAS' || city == 'HENDERSON') {
                 document.getElementById('testResults').innerHTML = 'The Summerlin location will open in 2018';
             }
